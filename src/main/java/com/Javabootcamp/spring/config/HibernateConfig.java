@@ -13,8 +13,10 @@ import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
-
+import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+
 
 
 @Configuration
@@ -35,10 +37,11 @@ public class HibernateConfig {
 		
 		return datasource;
 	}
+	@Bean
 	public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan(new String[] { "com.Javabootcamo.spring.models" });
+        sessionFactory.setPackagesToScan(new String[] { "com.Javabootcamp.spring" });
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
      }
@@ -51,7 +54,7 @@ public class HibernateConfig {
 	        return properties;        
 	    }
 	    
-		@Bean
+	 	@Bean
 	    @Autowired
 	    public HibernateTransactionManager transactionManager(SessionFactory s) {
 	       HibernateTransactionManager txManager = new HibernateTransactionManager();
