@@ -1,4 +1,4 @@
-package com.Javabootcamp.spring.testcase;
+package com.Javabootcamp.spring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
