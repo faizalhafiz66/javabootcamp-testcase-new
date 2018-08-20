@@ -1,17 +1,21 @@
 package com.Javabootcamp.spring.config;
 
+import java.util.Properties;
+
 import javax.sql.DataSource;
 
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
-import org.springframework.transaction.PlatformTransactionManager;
+
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import com.mysql.cj.jdbc.MysqlDataSource;
+
 
 @Configuration
 @EnableTransactionManagement
@@ -23,27 +27,36 @@ public class HibernateConfig {
 
 	@Bean
 	public DataSource dataSource() {
-		MysqlDataSource dataSource = new MysqlDataSource();
-		dataSource.setURL(env.getProperty("jdbc.url"));
-		dataSource.setUser(env.getProperty("jdbc.user"));
-		dataSource.setPassword(env.getProperty("jdbc.password"));
-		return dataSource;
+		DriverManagerDataSource datasource = new DriverManagerDataSource();
+		datasource.setDriverClassName(env.getRequiredProperty("jdbc.driverClassName"));
+		datasource.setUrl(env.getRequiredProperty("jdbc.url"));
+		datasource.setUsername(env.getRequiredProperty("jdbc.user"));
+		datasource.setPassword(env.getRequiredProperty("jdbc.password"));
+		
+		return datasource;
 	}
-
-	@Bean
 	public LocalSessionFactoryBean sessionFactory() {
-		LocalSessionFactoryBean result = new LocalSessionFactoryBean();
-		result.setDataSource(dataSource());
-		result.setPackagesToScan(new String[] { "com.Javabootcamp.spring" });
+        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
+        sessionFactory.setDataSource(dataSource());
+        sessionFactory.setPackagesToScan(new String[] { "com.Javabootcamo.spring.models" });
+        sessionFactory.setHibernateProperties(hibernateProperties());
+        return sessionFactory;
+     }
 
-		return result;
-	}
-
-	@Bean
-	public PlatformTransactionManager hibernateTransactionManager() {
-		HibernateTransactionManager transactionManager = new HibernateTransactionManager();
-		transactionManager.setSessionFactory(sessionFactory().getObject());
-		return transactionManager;
-	}
+	 private Properties hibernateProperties() {
+	        Properties properties = new Properties();
+	        properties.put("hibernate.dialect", env.getRequiredProperty("hibernate.dialect"));
+	        properties.put("hibernate.show_sql", env.getRequiredProperty("hibernate.show_sql"));
+	        properties.put("hibernate.format_sql", env.getRequiredProperty("hibernate.format_sql"));
+	        return properties;        
+	    }
+	    
+		@Bean
+	    @Autowired
+	    public HibernateTransactionManager transactionManager(SessionFactory s) {
+	       HibernateTransactionManager txManager = new HibernateTransactionManager();
+	       txManager.setSessionFactory(s);
+	       return txManager;
+	    }
 
 }
