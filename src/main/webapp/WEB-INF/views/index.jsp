@@ -4,52 +4,21 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Top Navigation</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-  <c:url value="/css/bower_components/bootstrap/dist/css/bootstrap.min.css" var="bootstrapCss" />
-	<link href="${bootstrapCss}" rel="stylesheet" />
-  <!-- Font Awesome -->
-   <c:url value="/css/bower_components/font-awesome/css/font-awesome.min.css" var="fontawesome" />
-	<link href="${fontawesome}" rel="stylesheet" />
-  <!-- Ionicons -->
-   <c:url value="/css/bower_components/Ionicons/css/ionicons.min.css" var="ionicons" />
-	<link href="${ionicons}" rel="stylesheet" />
-  <!-- Theme style -->
-    <c:url value="/css/AdminLTE.css" var="adminLTECss" />
-	<link href="${adminLTECss}" rel="stylesheet" />
-
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-      <c:url value="/css/skins/_all-skins.min.css" var="allskin" />
-	<link href="${allskin}" rel="stylesheet" />
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-  <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+ <%@include file="./shared/head.jsp" %>
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-blue-light layout-top-nav">
+<body class="hold-transition skin-blue layout-top-nav">
 <div class="wrapper">
 
-<header>
 <!-- SECTION HEADER -->
+<header class="main-header">
 <%@include file="./shared/navbar.jsp" %>
 </header>
  
   <!-- Full Width Column -->
   <div class="content-wrapper">
     <div class="container">
-      <!-- Content Header (Page header) -->
+	      <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
           Top Navigation
@@ -93,24 +62,14 @@
     <!-- /.container -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
+  
+  
+  
+<footer class="main-footer">
     <%@include file="./shared/footer.jsp" %>
     <!-- /.container -->
-  </footer>
+</footer>
 </div>
-<!-- ./wrapper -->
-
-<!-- jQuery 3 -->
-<script src="/css/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="/css/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- SlimScroll -->
-<script src="/css/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="/css/bower_components/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="/js/adminlte.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="/js/demo.js"></script>
+<%@include file="./shared/footerjs.jsp" %>
 </body>
 </html>
