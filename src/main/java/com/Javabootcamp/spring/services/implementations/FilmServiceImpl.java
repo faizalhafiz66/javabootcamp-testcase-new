@@ -11,14 +11,15 @@ import com.Javabootcamp.spring.models.FilmModel;
 import com.Javabootcamp.spring.services.interfaces.FilmService;
 
 
-@Service
+@Service("FilmService")
+@Transactional
 public class FilmServiceImpl implements FilmService {
 
 	@Autowired
 	private FilmDAO FilmDao;
 	
 	@Override
-	@Transactional
+	
 	public List<FilmModel> getAllMovie() {
 		// TODO Auto-generated method stub
 		return FilmDao.getAllMovie();

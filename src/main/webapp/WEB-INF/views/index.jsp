@@ -60,13 +60,26 @@
                   <th>Title</th>
                   <th>Description</th>
                   <th>Release Year</th>
-                  
+                  <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
-               
+               	<c:forEach items="${filmModel}"></c:forEach>
                 </tbody>
-                
+                <tr>
+                	<td>
+                	${filmModel.filmid }
+                	</td>
+                	<td>
+                	${filmModel.title }
+                	</td>
+                	<td>
+                	${filmModel.description }
+                	</td>
+                	<td>
+                	${filmModel.releaseyear }
+                	</td>
+                </tr>
               </table>
             </div>
             <!-- /.box-body -->
