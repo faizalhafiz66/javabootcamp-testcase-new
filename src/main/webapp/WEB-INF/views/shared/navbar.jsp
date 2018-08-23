@@ -1,7 +1,7 @@
   <nav class="navbar navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="../../index2.html" class="navbar-brand"><b>Admin</b>LTE</a>
+          <a href="../../index2.html" class="navbar-brand"><b>JavaBootCamp</b>JBC</a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
             <i class="fa fa-bars"></i>
           </button>
@@ -51,7 +51,8 @@
                       <a href="#">
                         <div class="pull-left">
                           <!-- User Image -->
-                          <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                             <img src='<c:url value ="/img/user2-160x160.jpg"></c:url>' class="img-circle" alt="User Image">
+                         
                         </div>
                         <!-- Message title and timestamp -->
                         <h4>
@@ -135,14 +136,14 @@
               <!-- Menu Toggle Button -->
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- The user image in the navbar-->
-                <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                 <img src='<c:url value ="/img/user2-160x160.jpg"></c:url>' class="user-image" alt="User Image">
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                 <span class="hidden-xs">Alexander Pierce</span>
               </a>
               <ul class="dropdown-menu">
                 <!-- The user image in the menu -->
                 <li class="user-header">
-                  <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                   <img src='<c:url value ="/img/user2-160x160.jpg"></c:url>' class="img-circle" alt="User Image">
 
                   <p>
                     Alexander Pierce - Web Developer

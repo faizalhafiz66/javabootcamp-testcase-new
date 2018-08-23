@@ -19,7 +19,7 @@
    <c:url value="/css/bower_components/Ionicons/css/ionicons.min.css" var="ionicons" />
 	<link href="${ionicons}" rel="stylesheet" />
   <!-- Theme style -->
-    <c:url value="/css/AdminLTE.min.css" var="adminLTECss" />
+    <c:url value="/css/AdminLTE.css" var="adminLTECss" />
 	<link href="${adminLTECss}" rel="stylesheet" />
 
   <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-blue layout-top-nav">
+<body class="hold-transition skin-blue-light layout-top-nav">
 <div class="wrapper">
 
 <header>
@@ -101,16 +101,16 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/css/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/css/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- SlimScroll -->
-<script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/css/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
-<script src="../css/bower_components/fastclick/lib/fastclick.js"></script>
+<script src="/css/bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="../../js/adminlte.js"></script>
+<script src="/js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="../../js/demo.js"></script>
+<script src="/js/demo.js"></script>
 </body>
 </html>
