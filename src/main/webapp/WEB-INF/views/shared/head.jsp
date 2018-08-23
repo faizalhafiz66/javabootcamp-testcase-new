@@ -20,6 +20,11 @@
        folder instead of downloading all of them to reduce the load. -->
       <c:url value="/css/skins/_all-skins.min.css" var="allskin" />
 	<link href="${allskin}" rel="stylesheet" />
+	
+	 <c:url value="/css/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css" var="datatables" />
+	<link href="${datatables}" rel="stylesheet" />
+	
+	
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
