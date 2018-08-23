@@ -1,6 +1,6 @@
 package com.Javabootcamp.spring.models;
 
-import java.util.Date;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.format.annotation.DateTimeFormat;
+
 
 @Entity
 @Table(name="film")
@@ -26,9 +26,9 @@ public class FilmModel {
 	@Column(name="description")
 	private String description;
 	
-	@DateTimeFormat(pattern="yyyy")
+	
 	@Column(name="release_year")
-	private Date releaseyear;
+	private int releaseyear;
 	
 	@Column(name="language_id")
 	private int languageid;
@@ -37,7 +37,7 @@ public class FilmModel {
 		
 	}
 
-	public FilmModel(String title, String description, Date releaseyear, int languageid) {
+	public FilmModel(String title, String description, int releaseyear, int languageid) {
 		this.title = title;
 		this.description = description;
 		this.releaseyear = releaseyear;
@@ -68,11 +68,11 @@ public class FilmModel {
 		this.description = description;
 	}
 
-	public Date getReleaseyear() {
+	public int getReleaseyear() {
 		return releaseyear;
 	}
 
-	public void setReleaseyear(Date releaseyear) {
+	public void setReleaseyear(int releaseyear) {
 		this.releaseyear = releaseyear;
 	}
 
