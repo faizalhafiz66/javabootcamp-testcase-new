@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <%@page import="com.fasterxml.jackson.annotation.JsonInclude.Include"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
   <meta charset="utf-8">
@@ -8,16 +10,22 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="main/resources/static/css/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <c:url value="/css/bower_components/bootstrap/dist/css/bootstrap.min.css" var="bootstrapCss" />
+	<link href="${bootstrapCss}" rel="stylesheet" />
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="main/resources/static/css/bower_components/font-awesome/css/font-awesome.min.css">
+   <c:url value="/css/bower_components/font-awesome/css/font-awesome.min.css" var="fontawesome" />
+	<link href="${fontawesome}" rel="stylesheet" />
   <!-- Ionicons -->
-  <link rel="stylesheet" href="main/resources/static/css/bower_components/Ionicons/css/ionicons.min.css">
+   <c:url value="/css/bower_components/Ionicons/css/ionicons.min.css" var="ionicons" />
+	<link href="${ionicons}" rel="stylesheet" />
   <!-- Theme style -->
-  <link rel="stylesheet" href="main/resources/static/css/AdminLTE.min.css">
+    <c:url value="/css/AdminLTE.min.css" var="adminLTECss" />
+	<link href="${adminLTECss}" rel="stylesheet" />
+
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="main/resources/static/css/skins/_all-skins.min.css">
+      <c:url value="/css/skins/_all-skins.min.css" var="allskin" />
+	<link href="${allskin}" rel="stylesheet" />
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
