@@ -8,7 +8,9 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.Javabootcamp.spring.models.FilmModel;
 import com.Javabootcamp.spring.services.interfaces.FilmService;
@@ -16,6 +18,7 @@ import com.Javabootcamp.spring.services.interfaces.FilmService;
 
 
 @Controller
+
 public class IndexController {
 
 	@Autowired
@@ -23,12 +26,14 @@ public class IndexController {
 	@Autowired
 	FilmService FilmService;
 	
-	@RequestMapping("/list")
+	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public String showForm(Model myModel) {
 		
-		@SuppressWarnings("unused")
+	
 		List<FilmModel> filmModel = new ArrayList<FilmModel>();
-		filmModel = FilmService.getAllMovie();		
+		filmModel = FilmService.getAllMovie();	
+		
+		myModel.addAttribute("models", filmModel);
 		
 		return "index";
 	}

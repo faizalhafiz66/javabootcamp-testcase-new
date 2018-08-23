@@ -24,7 +24,7 @@ public class FilmDAOImpl implements FilmDAO {
 		Session currentsession = factory.getCurrentSession();
 		
 		Query<FilmModel> query = currentsession.createQuery("from FilmModel as film "
-				+  "order by releaseyear",FilmModel.class);
+				+  "order by filmid",FilmModel.class);
 
 		List<FilmModel> result = query.getResultList();
 		
@@ -38,7 +38,7 @@ public class FilmDAOImpl implements FilmDAO {
 		Session currentsession = factory.getCurrentSession();
 		
 		Query<FilmModel> query = currentsession.createQuery("from FilmModel as film "
-				+ "where film.release_year=: Year " + "order by releaseyear",FilmModel.class);
+				+ "where film.release_year=: Year " + "order by filmid",FilmModel.class);
 
 		List<FilmModel> resultwithYear = query.getResultList();
 		

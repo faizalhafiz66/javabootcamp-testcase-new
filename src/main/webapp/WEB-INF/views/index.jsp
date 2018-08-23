@@ -18,6 +18,7 @@
   <!-- Full Width Column -->
   <div class="content-wrapper">
     <div class="container">
+    <form method="post">
 	      <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
@@ -60,26 +61,34 @@
                   <th>Title</th>
                   <th>Description</th>
                   <th>Release Year</th>
-                  <th>Action</th>
+                  <th>language id</th>
+                  
                 </tr>
                 </thead>
+               
                 <tbody>
-               	<c:forEach items="${filmModel}"></c:forEach>
-                </tbody>
+                 <c:forEach items="${models}" var="film">
                 <tr>
+                	
                 	<td>
-                	${filmModel.filmid }
+                	${film.filmid }
                 	</td>
                 	<td>
-                	${filmModel.title }
+                	${film.title }
                 	</td>
                 	<td>
-                	${filmModel.description }
+                	${film.description }
                 	</td>
                 	<td>
-                	${filmModel.releaseyear }
+                	${film.releaseyear }
+                	</td>
+                	<td>
+                	${film.languageid } 
                 	</td>
                 </tr>
+                </c:forEach>
+                </tbody>
+               
               </table>
             </div>
             <!-- /.box-body -->
@@ -91,6 +100,7 @@
       <!-- /.row -->
       </section>
       <!-- /.content -->
+      </form>
     </div>
     <!-- /.container -->
   </div>
@@ -115,6 +125,8 @@
       'autoWidth'   : false
     })
   })
+  
+  
 </script>
 </body>
 </html>
