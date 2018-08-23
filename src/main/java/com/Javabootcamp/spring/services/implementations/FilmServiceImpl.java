@@ -1,0 +1,33 @@
+package com.Javabootcamp.spring.services.implementations;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.Javabootcamp.spring.dao.interfaces.FilmDAO;
+import com.Javabootcamp.spring.models.FilmModel;
+import com.Javabootcamp.spring.services.interfaces.FilmService;
+
+
+@Service
+public class FilmServiceImpl implements FilmService {
+
+	@Autowired
+	private FilmDAO FilmDao;
+	
+	@Override
+	@Transactional
+	public List<FilmModel> getAllMovie() {
+		// TODO Auto-generated method stub
+		return FilmDao.getAllMovie();
+	}
+
+	@Override
+	public List<FilmModel> getMoviebyYear(int year) {
+		// TODO Auto-generated method stub
+		return FilmDao.getAllMovieByYear(year);
+	}
+
+}
