@@ -44,7 +44,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-           		  <form role="form" method="post">
+           		  <form  method="post">
               		<div class="box-body">
                 		<div class="form-group">
                   		<label for="Title">Title</label>                 		
