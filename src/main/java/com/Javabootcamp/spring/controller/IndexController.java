@@ -8,7 +8,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -36,5 +37,26 @@ public class IndexController {
 		myModel.addAttribute("models", filmModel);
 		
 		return "index";
+	}
+	
+	@GetMapping("/insert")
+	public String ShowFormInsert(Model myModel) {
+		
+		FilmModel model = new FilmModel();
+		myModel.addAttribute("models", model);
+		return "transaction/insert";
+	}
+	
+	public String InsertTransaction(Model myModel, BindingResult bindingresult) {
+		
+		if (bindingresult.hasErrors())
+		{
+			FilmModel model = new FilmModel();
+			myModel.addAttribute("models", model);
+			return "transaction/insert";
+		}
+		
+		
+		return "redirect:/list";
 	}
 }

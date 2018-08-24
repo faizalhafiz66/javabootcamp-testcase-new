@@ -45,4 +45,36 @@ public class FilmDAOImpl implements FilmDAO {
 		return resultwithYear;
 	}
 
+	@Override
+	public void InsertFilm(FilmModel film) {
+		
+		Session currentsession = factory.getCurrentSession();
+		currentsession.saveOrUpdate(film);
+		
+	}
+
+	@Override
+	public void DeleteFilm(FilmModel film) {
+	
+		Session currentsession = factory.getCurrentSession();
+		currentsession.delete(film);
+		
+	}
+
+	@Override
+	public FilmModel getFilm(int FilmId) {
+		Session currentsession = factory.getCurrentSession();
+		
+		Query<FilmModel> query = currentsession.createQuery("from FilmModel as film "
+				+ "where film.filmid=: FilmId " + "order by filmid",FilmModel.class);
+		
+		query.setParameter("FilmId", FilmId);
+		
+		List<FilmModel> result = query.getResultList();
+		FilmModel model = result.get(0);
+		
+		
+		return model;
+	}
+
 }

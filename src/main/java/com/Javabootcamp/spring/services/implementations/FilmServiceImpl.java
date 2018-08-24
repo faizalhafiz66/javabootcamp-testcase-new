@@ -31,4 +31,24 @@ public class FilmServiceImpl implements FilmService {
 		return FilmDao.getAllMovieByYear(year);
 	}
 
+	@Override
+	public void InsertFilm(FilmModel film) {
+	
+		FilmDao.InsertFilm(film);
+		
+	}
+
+	@Override
+	public void DeleteFilm(FilmModel film) {
+		
+		FilmDao.DeleteFilm(film);
+		
+	}
+
+	@Override
+	public FilmModel getFilm(int FilmId) {
+		
+		return FilmDao.getFilm(FilmId);
+	}
+
 }

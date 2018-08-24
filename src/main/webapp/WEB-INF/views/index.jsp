@@ -18,7 +18,7 @@
   <!-- Full Width Column -->
   <div class="content-wrapper">
     <div class="container">
-    <form method="post">
+  
 	      <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
@@ -42,7 +42,7 @@
               <h3 class="box-title">List Movie</h3>
               <br>
               <br>
-              
+                <form method="post">
               	<div class="input-group input-group-sm pull-left" style="width:20%">
                   
                   <input type="text" class="form-control" id="filterbyYear" placeholder="Search by Year">
@@ -51,9 +51,12 @@
                     </span>
                    
               	</div>
+              	 </form>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
+            <a href="/insert"
+						class="button primary small">Insert Transaction</a> <br> <br>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -100,7 +103,7 @@
       <!-- /.row -->
       </section>
       <!-- /.content -->
-      </form>
+     
     </div>
     <!-- /.container -->
   </div>
