@@ -1,5 +1,7 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ page session="false" %>
 <html>
 <head>
  <%@include file="/WEB-INF/views/shared/head.jsp" %>
@@ -44,34 +46,46 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-           		  <form  method="post">
+            <c:url var="addAction" value="/form/insert"></c:url>
+           		  <form:form action="${addAction }" method="POST" modelAttribute="models">
               		<div class="box-body">
                 		<div class="form-group">
-                  		<label for="Title">Title</label>                 		
-                  		<input type="text" class="form-control" id="title" placeholder="Enter Title">
-               		</div>
+                  		<form:label path="title" for="Title">Title</form:label>                 		
+                  		<form:input path="title" class="form-control" id="title" placeholder="Enter Title" />
+               			</div>
                 		<div class="form-group">
-                  		<label for="description">Description</label>
-                  		<textarea rows="5" cols="5" class="form-control" id="description" placeholder="desctiption"></textarea>                 		
+                  		<form:label path="description" for="description">Description</form:label>
+                  		<form:textarea path="description" rows="5" cols="5" class="form-control" id="description" placeholder="desctiption"></form:textarea>                 		
                 		</div>
                 		<div class="form-group">
-                  		<label>Select</label>
-                  		<select class="form-control">
-                    	<option>2011</option>
-	                    <option>2012</option>
-	                    <option>2013</option>
-	                    <option>2014</option>
-	                    <option>2015</option>
-                  		</select>
-                </div>
+                  		<form:label path="releaseyear">Release Year</form:label>
+                  		<form:select class="form-control" path="releaseyear">
+                    	<form:option value="2011"></form:option>
+	                    <form:option value="2012"></form:option>
+	                    <form:option value="2013"></form:option>
+	                    <form:option value="2014"></form:option>
+	                    <form:option value="2015"></form:option>
+                  		</form:select>
+                		</div>
+                		<div>
+                		<form:label path="language" for="language">Language</form:label>                 		
+                  		<form:select class="form-control" path="language" id="language">
+                    	<form:option value="English"></form:option>
+	                    <form:option value="Indonesian"></form:option>
+	                    <form:option value="Germany"></form:option>
+	                    <form:option value="Japanese"></form:option>
+	                    <form:option value="Sundanese"></form:option>
+                  		</form:select>
+                		</div>
                 		
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+              <input type="submit" value="Add Film" />
+              
               </div>
-            </form>
+            </form:form>
             </div>
             <!-- /.box-body -->
           </div>

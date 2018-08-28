@@ -55,7 +55,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-            <a href="/insert"
+            <a href="/form"
 						class="button primary small">Insert Transaction</a> <br> <br>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
@@ -64,7 +64,7 @@
                   <th>Title</th>
                   <th>Description</th>
                   <th>Release Year</th>
-                  <th>language id</th>
+                  <th>language</th>
                   
                 </tr>
                 </thead>
@@ -86,7 +86,7 @@
                 	${film.releaseyear }
                 	</td>
                 	<td>
-                	${film.languageid } 
+                	${film.language } 
                 	</td>
                 </tr>
                 </c:forEach>

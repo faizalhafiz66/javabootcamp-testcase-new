@@ -13,15 +13,15 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="film")
+@Table(name="film_test")
 public class FilmModel {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="film_id")
+	@Column(name="filmid")
 	private int filmid;
 	
-	@Column(name="title")
+	@Column(name="Title")
 	private String title;
 	
 	@Column(name="description")
@@ -31,18 +31,18 @@ public class FilmModel {
 	@Column(name="release_year")
 	private int releaseyear;
 	
-	@Column(name="language_id")
-	private int languageid;
+	@Column(name="languange")
+	private String language;
 	
 	public FilmModel() {
 		
 	}
 
-	public FilmModel(String title, String description, int releaseyear, int languageid) {
+	public FilmModel(String title, String description, int releaseyear, String language) {
 		this.title = title;
 		this.description = description;
 		this.releaseyear = releaseyear;
-		this.languageid = languageid;
+		this.language = language;
 	}
 
 	public int getFilmid() {
@@ -77,19 +77,21 @@ public class FilmModel {
 		this.releaseyear = releaseyear;
 	}
 
-	public int getLanguageid() {
-		return languageid;
+	public String getLanguage() {
+		return language;
 	}
 
-	public void setLanguageid(int languageid) {
-		this.languageid = languageid;
+	public void setLanguage(String language) {
+		this.language = language;
 	}
 
 	@Override
 	public String toString() {
 		return "FilmModel [filmid=" + filmid + ", title=" + title + ", description=" + description + ", releaseyear="
-				+ releaseyear + ", languageid=" + languageid + "]";
+				+ releaseyear + ", language=" + language + "]";
 	}
-	
+
+
+
 	
 }
