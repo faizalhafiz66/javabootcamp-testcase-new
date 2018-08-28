@@ -54,10 +54,14 @@ public class FilmDAOImpl implements FilmDAO {
 	}
 
 	@Override
-	public void DeleteFilm(FilmModel film) {
+	public void DeleteFilm(int filmid) {
 	
 		Session currentsession = factory.getCurrentSession();
-		currentsession.delete(film);
+		FilmModel models = (FilmModel) currentsession.load(FilmModel.class, new Integer(filmid));
+		if (models != null) {
+			currentsession.delete(models);
+		}
+		
 		
 	}
 
@@ -75,6 +79,13 @@ public class FilmDAOImpl implements FilmDAO {
 		
 		
 		return model;
+	}
+
+	@Override
+	public void UpdateFilm(FilmModel film) {
+		Session currentsession = factory.getCurrentSession();
+		currentsession.saveOrUpdate(film);
+		
 	}
 
 }

@@ -12,6 +12,7 @@ public interface FilmService {
 	List<FilmModel> getAllMovie();
 	List<FilmModel> getMoviebyYear(int year);
 	void InsertFilm(FilmModel film);
-	void DeleteFilm(FilmModel film);
+	void DeleteFilm(int filmid);
+	void UpdateFilm(FilmModel film);
 	FilmModel getFilm(int FilmId);
 }

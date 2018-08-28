@@ -39,9 +39,9 @@ public class FilmServiceImpl implements FilmService {
 	}
 
 	@Override
-	public void DeleteFilm(FilmModel film) {
+	public void DeleteFilm(int filmid) {
 		
-		FilmDao.DeleteFilm(film);
+		FilmDao.DeleteFilm(filmid);
 		
 	}
 
@@ -49,6 +49,13 @@ public class FilmServiceImpl implements FilmService {
 	public FilmModel getFilm(int FilmId) {
 		
 		return FilmDao.getFilm(FilmId);
+	}
+
+	@Override
+	public void UpdateFilm(FilmModel film) {
+		
+		FilmDao.UpdateFilm(film);
+		
 	}
 
 }

@@ -65,6 +65,7 @@
                   <th>Description</th>
                   <th>Release Year</th>
                   <th>language</th>
+                  <th> Actions </th>
                   
                 </tr>
                 </thead>
@@ -88,6 +89,8 @@
                 	<td>
                 	${film.language } 
                 	</td>
+                	<td><a href="<c:url value='/edit/${person.id}' />" >Edit</a> <a href="<c:url value='/form/delete/${film.filmid}' />" >Delete</a></td>
+					
                 </tr>
                 </c:forEach>
                 </tbody>
