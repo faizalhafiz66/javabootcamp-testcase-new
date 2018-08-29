@@ -89,7 +89,7 @@
                 	<td>
                 	${film.language } 
                 	</td>
-                	<td><a href="<c:url value='/form/insert/${person.id}' />" >Edit</a> 
+                	<td><a href="<c:url value='/form/${film.filmid}' />" >Edit</a> 
                 	
                 	<a href="<c:url value='/form/delete/${film.filmid}'  />" onclick="return confirm('Are you sure you want to delete this item?');"> Delete</a>
                 	</td>

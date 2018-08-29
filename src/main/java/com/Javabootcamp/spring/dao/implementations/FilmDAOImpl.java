@@ -84,7 +84,7 @@ public class FilmDAOImpl implements FilmDAO {
 	@Override
 	public void UpdateFilm(FilmModel film) {
 		Session currentsession = factory.getCurrentSession();
-		currentsession.saveOrUpdate(film);
+		currentsession.update(film);
 		
 	}
 

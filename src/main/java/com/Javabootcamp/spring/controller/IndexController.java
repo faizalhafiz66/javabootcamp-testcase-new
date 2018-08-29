@@ -44,13 +44,16 @@ public class IndexController {
 	}
 	
 	@RequestMapping(value = "/form/insert", method=RequestMethod.POST)
-	public String InsertTransaction(@ModelAttribute("FilmModel") FilmModel film) {
+	public String InsertTransaction(@ModelAttribute("models") FilmModel film) {
+		
 		
 		if (film.getFilmid() == 0)
 		{
-			FilmService.InsertFilm(film);
+			FilmService.UpdateFilm(film);
+			
 		}
 		else {		
+			FilmService.InsertFilm(film);
 		}		
 		return "redirect:/list";
 	}
@@ -62,10 +65,14 @@ public class IndexController {
 		return "redirect:/list";
 	}
 	
-	public String UpdateFilm(@PathVariable("filmid") int id, Model myModel) {
+	@RequestMapping(value="/form/{filmid}", method=RequestMethod.GET)
+	public String ShowUpdateFilmForm(@PathVariable("filmid") int id, Model myModel) {
 		
-		myModel.addAttribute("film", FilmService.getFilm(id));
-		myModel.addAttribute("models", FilmService.getAllMovie());
-		return "index";
+		myModel.addAttribute("models", FilmService.getFilm(id));
+		myModel.addAttribute("listFilm", FilmService.getAllMovie());
+		
+		return "transaction/insert";
 	}
+	
+	
 }

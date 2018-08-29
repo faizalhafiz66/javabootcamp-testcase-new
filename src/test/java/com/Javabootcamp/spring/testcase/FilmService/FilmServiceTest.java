@@ -28,7 +28,8 @@ public class FilmServiceTest {
 		
 		@SuppressWarnings("unused")
 		FilmModel testfilm = (FilmModel) filmServiceImpl.getAllMovie();
-		//assertEquals(testfilm.getTitle(), testfilm.getDescription(), testfilm.getReleaseyear(), testfilm.getLanguage());
+		//When(filmdaoMock.getAllMovieByYear(2015)).thenReturn("sampleFilmModel");
+		
 		
 		
 		
