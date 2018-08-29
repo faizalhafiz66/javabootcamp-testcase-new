@@ -55,8 +55,9 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-            <a href="/form"
-						class="button primary small">Insert Transaction</a> <br> <br>
+           
+           <input type="button" class="btn btn-primary" onclick="location.href='/form';" value="Insert Film" />
+            <br> <br>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>

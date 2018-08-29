@@ -32,6 +32,7 @@ public class FilmServiceImpl implements FilmService {
 	}
 
 	@Override
+	@Transactional
 	public void InsertFilm(FilmModel film) {
 	
 		FilmDao.InsertFilm(film);
@@ -39,6 +40,7 @@ public class FilmServiceImpl implements FilmService {
 	}
 
 	@Override
+	@Transactional
 	public void DeleteFilm(int filmid) {
 		
 		FilmDao.DeleteFilm(filmid);
@@ -52,6 +54,7 @@ public class FilmServiceImpl implements FilmService {
 	}
 
 	@Override
+	@Transactional
 	public void UpdateFilm(FilmModel film) {
 		
 		FilmDao.UpdateFilm(film);

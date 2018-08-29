@@ -49,11 +49,11 @@ public class IndexController {
 		
 		if (film.getFilmid() == 0)
 		{
-			FilmService.UpdateFilm(film);
-			
+			FilmService.InsertFilm(film);	
 		}
 		else {		
-			FilmService.InsertFilm(film);
+			FilmService.UpdateFilm(film);
+			
 		}		
 		return "redirect:/list";
 	}

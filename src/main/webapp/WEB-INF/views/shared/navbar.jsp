@@ -1,7 +1,7 @@
   <nav class="navbar navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="../../index2.html" class="navbar-brand"><b>JavaBootCamp</b>JBC</a>
+          <a href="/list" class="navbar-brand"><b>JavaBootCamp</b>JBC</a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
             <i class="fa fa-bars"></i>
           </button>
@@ -51,7 +51,7 @@
                       <a href="#">
                         <div class="pull-left">
                           <!-- User Image -->
-                             <img src='<c:url value ="/img/user2-160x160.jpg"></c:url>' class="img-circle" alt="User Image">
+                             <img src='<c:url value ="/img/spring.png"></c:url>' class="img-circle" alt="User Image">
                          
                         </div>
                         <!-- Message title and timestamp -->
@@ -136,18 +136,18 @@
               <!-- Menu Toggle Button -->
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- The user image in the navbar-->
-                 <img src='<c:url value ="/img/user2-160x160.jpg"></c:url>' class="user-image" alt="User Image">
+                 <img src='<c:url value ="/img/spring.png"></c:url>' class="user-image" alt="User Image">
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                <span class="hidden-xs">Alexander Pierce</span>
+                <span class="hidden-xs">Faizal Hafiz</span>
               </a>
               <ul class="dropdown-menu">
                 <!-- The user image in the menu -->
                 <li class="user-header">
-                   <img src='<c:url value ="/img/user2-160x160.jpg"></c:url>' class="img-circle" alt="User Image">
+                   <img src='<c:url value ="/img/spring.png"></c:url>' class="img-circle" alt="User Image">
 
                   <p>
-                    Alexander Pierce - Web Developer
-                    <small>Member since Nov. 2012</small>
+                    M Faizal Hafiz - Software Engineer
+                    <small>Member since July. 2018</small>
                   </p>
                 </li>
                 <!-- Menu Body -->
