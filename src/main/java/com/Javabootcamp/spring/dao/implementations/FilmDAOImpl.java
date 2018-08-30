@@ -12,7 +12,6 @@ import com.Javabootcamp.spring.dao.interfaces.FilmDAO;
 import com.Javabootcamp.spring.models.FilmModel;
 
 
-
 @Repository("FilmDAO")
 public class FilmDAOImpl implements FilmDAO {
 
@@ -61,8 +60,6 @@ public class FilmDAOImpl implements FilmDAO {
 		if (models != null) {
 			currentsession.delete(models);
 		}
-		
-		
 	}
 
 	@Override

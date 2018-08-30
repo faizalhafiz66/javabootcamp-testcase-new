@@ -14,5 +14,5 @@ public interface FilmService {
 	void InsertFilm(FilmModel film);
 	void DeleteFilm(int filmid);
 	void UpdateFilm(FilmModel film);
-	FilmModel getFilm(int FilmId);
+	FilmModel getFilm(int filmId);
 }

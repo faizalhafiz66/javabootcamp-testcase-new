@@ -10,8 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 
-
-
 @Entity
 @Table(name="film_test")
 public class FilmModel {

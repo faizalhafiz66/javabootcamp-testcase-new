@@ -16,26 +16,26 @@ import com.Javabootcamp.spring.services.interfaces.FilmService;
 public class FilmServiceImpl implements FilmService {
 
 	@Autowired
-	private FilmDAO FilmDao;
+	private FilmDAO filmDAO;
 	
 	@Override
 	
 	public List<FilmModel> getAllMovie() {
-		// TODO Auto-generated method stub
-		return FilmDao.getAllMovie();
+
+		return filmDAO.getAllMovie();
 	}
 
 	@Override
 	public List<FilmModel> getMoviebyYear(int year) {
-		// TODO Auto-generated method stub
-		return FilmDao.getAllMovieByYear(year);
+
+		return filmDAO.getAllMovieByYear(year);
 	}
 
 	@Override
 	@Transactional
 	public void InsertFilm(FilmModel film) {
 	
-		FilmDao.InsertFilm(film);
+		filmDAO.InsertFilm(film);
 		
 	}
 
@@ -43,21 +43,21 @@ public class FilmServiceImpl implements FilmService {
 	@Transactional
 	public void DeleteFilm(int filmid) {
 		
-		FilmDao.DeleteFilm(filmid);
+		filmDAO.DeleteFilm(filmid);
 		
 	}
 
 	@Override
 	public FilmModel getFilm(int FilmId) {
 		
-		return FilmDao.getFilm(FilmId);
+		return filmDAO.getFilm(FilmId);
 	}
 
 	@Override
 	@Transactional
 	public void UpdateFilm(FilmModel film) {
 		
-		FilmDao.UpdateFilm(film);
+		filmDAO.UpdateFilm(film);
 		
 	}
 

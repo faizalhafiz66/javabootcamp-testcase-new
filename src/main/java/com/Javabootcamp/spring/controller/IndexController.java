@@ -23,20 +23,20 @@ public class IndexController {
 	@Autowired
 	HttpSession httpSession;
 	@Autowired
-	FilmService FilmService;
+	FilmService filmService;
 	
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public String showForm(Model myModel) {
 			
 		List<FilmModel> filmModel = new ArrayList<FilmModel>();
-		filmModel = FilmService.getAllMovie();	
+		filmModel = filmService.getAllMovie();	
 		
 		myModel.addAttribute("models", filmModel);		
 		return "index";
 	}
 	
 	@RequestMapping("/form")
-	public String ShowFormInsert(Model myModel) {
+	public String showFormInsert(Model myModel) {
 		
 		FilmModel model = new FilmModel();
 		myModel.addAttribute("models", model);
@@ -44,32 +44,32 @@ public class IndexController {
 	}
 	
 	@RequestMapping(value = "/form/insert", method=RequestMethod.POST)
-	public String InsertTransaction(@ModelAttribute("models") FilmModel film) {
+	public String insertTransaction(@ModelAttribute("models") FilmModel film) {
 		
 		
 		if (film.getFilmid() == 0)
 		{
-			FilmService.InsertFilm(film);	
+			filmService.InsertFilm(film);
 		}
 		else {		
-			FilmService.UpdateFilm(film);
+			filmService.UpdateFilm(film);
 			
 		}		
 		return "redirect:/list";
 	}
 	
 	@RequestMapping("/form/delete/{filmid}")
-	public String DeleteTransaction(@PathVariable("filmid") int id) {
+	public String deleteTransaction(@PathVariable("filmid") int id) {
 		
-		FilmService.DeleteFilm(id);	
+		filmService.DeleteFilm(id);
 		return "redirect:/list";
 	}
 	
 	@RequestMapping(value="/form/{filmid}", method=RequestMethod.GET)
-	public String ShowUpdateFilmForm(@PathVariable("filmid") int id, Model myModel) {
+	public String showUpdateFilmForm(@PathVariable("filmid") int id, Model myModel) {
 		
-		myModel.addAttribute("models", FilmService.getFilm(id));
-		myModel.addAttribute("listFilm", FilmService.getAllMovie());
+		myModel.addAttribute("models", filmService.getFilm(id));
+		myModel.addAttribute("listFilm", filmService.getAllMovie());
 		
 		return "transaction/insert";
 	}
