@@ -49,6 +49,10 @@
             <c:url var="addAction" value="/form/insert"></c:url>
            		  <form:form action="${addAction }" method="POST" modelAttribute="models">
               		<div class="box-body">
+              		<div class="form-group">
+              			<form:input path="filmid" readonly="true" size="8" disabled="true" />
+						<form:hidden path="filmid" />
+              		</div>
                 		<div class="form-group">
                   		<form:label path="title" for="Title">Title</form:label>                 		
                   		<form:input path="title" class="form-control" id="title" placeholder="Enter Title" />
