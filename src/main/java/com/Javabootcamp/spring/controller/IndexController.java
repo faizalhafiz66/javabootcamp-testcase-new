@@ -1,6 +1,6 @@
 package com.Javabootcamp.spring.controller;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 
@@ -28,8 +28,7 @@ public class IndexController {
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public String showForm(Model myModel) {
 			
-		List<FilmModel> filmModel = new ArrayList<FilmModel>();
-		filmModel = filmService.getAllMovie();	
+		List<FilmModel> filmModel =  filmService.getAllMovie();	
 		
 		myModel.addAttribute("models", filmModel);		
 		return "index";

@@ -23,7 +23,8 @@
 	
 	 <c:url value="/css/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css" var="datatables" />
 	<link href="${datatables}" rel="stylesheet" />
-	
+	<c:url value="/css/iCheck/square/blue.css" var="iCheck" />
+	<link href="${iCheck} " rel="stylesheet"/>
 	
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

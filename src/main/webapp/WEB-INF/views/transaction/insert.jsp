@@ -50,7 +50,7 @@
            		  <form:form action="${addAction }" method="POST" modelAttribute="models">
               		<div class="box-body">
               		<div class="form-group">
-              			<form:input path="filmid" readonly="true" size="8" disabled="true" />
+              			<form:input path="filmid" type="hidden" readonly="true" size="8" disabled="true" />
 						<form:hidden path="filmid" />
               		</div>
                 		<div class="form-group">
